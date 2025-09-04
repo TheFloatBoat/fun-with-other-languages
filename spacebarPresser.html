@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spacebar Press</title>
+  <style>
+    .message {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="message-container"></div>
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.code === "Space") {
+        var messageContainer = document.getElementById("message-container");
+        var newMessage = document.createElement("div");
+        newMessage.className = "message";
+        newMessage.innerText = "hello";
+        messageContainer.appendChild(newMessage);
+
+        if (Math.random() < 0.01) {
+          alert("howdy partner");
+        }
+
+        if (Math.random() < 0.001) {
+          alert("miaumiaumiau");
+          window.close();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
